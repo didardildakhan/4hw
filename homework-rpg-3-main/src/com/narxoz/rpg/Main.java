@@ -3,6 +3,7 @@ package com.narxoz.rpg;
 import com.narxoz.rpg.adapter.EnemyCombatantAdapter;
 import com.narxoz.rpg.adapter.HeroCombatantAdapter;
 import com.narxoz.rpg.battle.BattleEngine;
+import com.narxoz.rpg.battle.EncounterResult;
 import com.narxoz.rpg.enemy.Goblin;
 import com.narxoz.rpg.hero.Warrior;
 
@@ -17,6 +18,8 @@ public class Main {
         EnemyCombatantAdapter enemyAdapter = new EnemyCombatantAdapter(goblin);
 
         BattleEngine engine = new BattleEngine();
-        engine.fight(heroAdapter, enemyAdapter);
+        EncounterResult result = engine.fight(heroAdapter, enemyAdapter);
+
+        result.printResult();
     }
 }

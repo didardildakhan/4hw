@@ -2,7 +2,7 @@ package com.narxoz.rpg.battle;
 
 public class BattleEngine {
 
-    public void fight(Combatant c1, Combatant c2) {
+    public EncounterResult fight(Combatant c1, Combatant c2) {
 
         while (c1.isAlive() && c2.isAlive()) {
 
@@ -13,9 +13,9 @@ public class BattleEngine {
         }
 
         if (c1.isAlive()) {
-            System.out.println(c1.getName() + " wins!");
+            return new EncounterResult(c1.getName());
         } else {
-            System.out.println(c2.getName() + " wins!");
+            return new EncounterResult(c2.getName());
         }
     }
 }
